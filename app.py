@@ -49,14 +49,14 @@ def login():
         usuario = request.form.get("usuario", "").strip()
         senha = request.form.get("senha", "").strip()
 
-        # autenticação simples (pode trocar por validação real)
         if usuario and senha:
             session["usuario"] = usuario
             return redirect(url_for("dados"))
         else:
             msg = "Usuário ou senha inválidos"
 
-    return render_template("login.html", mensagem=msg)
+    return render_template("login.html", mensagem=msg, agora=datetime.utcnow())
+
 
 
 # rota dados do acesso (após login)
