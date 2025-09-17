@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Login</h2>
+{% if mensagem %}
+  <div class="alert alert-danger">{{ mensagem }}</div>
+{% endif %}
+<form method="post" class="row g-3">
+  <div class="col-md-6">
+    <label class="form-label">Usuário</label>
+    <input name="usuario" class="form-control">
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Senha</label>
+    <input name="senha" type="password" class="form-control">
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Entrar</button>
+  </div>
+</form>
+{% endblock %}
