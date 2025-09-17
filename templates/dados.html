@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<h3>Dados do acesso</h3>
+<hr>
+<p>Você está acessando o sistema por meio do usuário <b>{{ usuario }}</b></p>
+
+<p>The local date and time is {{ agora|isoutc }}.</p>
+<p>That was a few seconds ago.</p>
+{% endblock %}
