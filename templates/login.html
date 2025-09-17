@@ -1,33 +1,24 @@
 {% extends "base.html" %}
+{% block content %}
+<div class="d-flex justify-content-center align-items-center" style="min-height: 70vh;">
+  <div class="card shadow p-4" style="min-width: 300px;">
+    <h3 class="mb-3">Login:</h3>
 
-{% block conteudo %}
-<div class="row justify-content-center mt-5">
-  <div class="col-md-4">
-    <div class="card shadow-lg p-4">
-      <h3 class="text-center mb-4">Login</h3>
-      <form method="POST">
-        <div class="mb-3">
-          <label for="usuario" class="form-label">Usuário</label>
-          <input type="text" class="form-control" id="usuario" name="usuario" required>
-        </div>
-        <div class="mb-3">
-          <label for="senha" class="form-label">Senha</label>
-          <input type="password" class="form-control" id="senha" name="senha" required>
-        </div>
-        <button type="submit" class="btn btn-dark w-100">Entrar</button>
-      </form>
-      {% if mensagem %}
-        <div class="alert alert-danger mt-3">{{ mensagem }}</div>
-      {% endif %}
-    </div>
+    {% if mensagem %}
+      <div class="alert alert-danger">{{ mensagem }}</div>
+    {% endif %}
+
+    <form method="post">
+      <div class="mb-3">
+        <input type="text" name="usuario" class="form-control" placeholder="Usuário ou e-mail">
+      </div>
+
+      <div class="mb-3">
+        <input type="password" name="senha" class="form-control" placeholder="Informe a sua senha">
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Enviar</button>
+    </form>
   </div>
-</div>
-
-<!-- Rodapé igual ao da Home -->
-<div class="text-center mt-4 text-muted">
-  <small>
-    The local date and time is {{ agora|isoutc }}.<br>
-    That was a few seconds ago.
-  </small>
 </div>
 {% endblock %}
